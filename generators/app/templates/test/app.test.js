@@ -6,8 +6,6 @@ import app from '../app';
 
 import db from '@/lib/db';
 
-//TODO test upload-url, filters, playlists 
-
 test('404 works', async () => {
   const response = await request(app.callback()).get('/404');
   expect(response.status).toBe(404);

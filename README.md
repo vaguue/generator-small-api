@@ -1,4 +1,4 @@
-# generator-koa-esm-api [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-koa-esm-api [![NPM version][npm-image]][npm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > Create Koa.js API server using the modern ESM Node.js module system + Mongoose
 
 ## Installation
