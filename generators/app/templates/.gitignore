@@ -1,0 +1,7 @@
+node_modules
+package-lock.json
+.*.swp
+diff.txt
+build
+coverage
+scr.sh

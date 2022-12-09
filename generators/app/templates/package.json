@@ -1,0 +1,60 @@
+{
+  "name": "API",
+  "version": "1.0.0",
+  "description": "Koa.js API server",
+  "main": "app.js",
+  "scripts": {
+    "build": "npm run bundle && npm run compile",
+    "bundle": "webpack",
+    "compile": "cp build/bundle.cjs . && pkg -t node16-linux -o build/server bundle.cjs && rm bundle.cjs",
+    "start": "node --no-warnings --es-module-specifier-resolution=node --loader ./custom-loader.js -r ./config.cjs app.js",
+    "dev": "nodemon --no-warnings --es-module-specifier-resolution=node --loader ./custom-loader.js -r ./config.cjs app.js",
+    "test": "npx --node-options='--no-warnings -r ./config.cjs --experimental-vm-modules' jest",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@koa/cors": "^3.4.2",
+    "@koa/router": "^12.0.0",
+    "chalk": "^4.1.2",
+    "dotenv": "^16.0.3",
+    "dotenv-expand": "^9.0.0",
+    "email-validator": "^2.0.4",
+    "koa": "^2.13.4",
+    "koa-body": "^5.0.0",
+    "koa-compose": "^4.1.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.6.5",
+    "mongoose-unique-validator": "^3.1.0",
+    "nanoid": "^4.0.0",
+    "nodemailer": "^6.8.0",
+    "passthrough-counter": "^1.0.0",
+    "slugify": "^1.6.5",
+    "sugar": "^2.0.6",
+    "uuid": "^9.0.0",
+    "yargs": "^17.6.0"
+  },
+  "type": "module",
+  "aliases": {
+    "@/models": "models",
+    "@/helpers": "helpers",
+    "@/lib": "lib",
+    "@/routes": "routes",
+    "@/public": "public"
+  },
+  "devDependencies": {
+    "mongodb": "^4.10.0",
+    "@faker-js/faker": "^7.6.0",
+    "@shelf/jest-mongodb": "^4.1.1",
+    "jest": "^29.2.0",
+    "nodemon": "^2.0.20",
+    "pkg": "^5.8.0",
+    "supertest": "^6.3.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-node-externals": "^3.0.0",
+    "husky": "^8.0.0"
+  }
+}
