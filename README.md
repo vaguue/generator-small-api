@@ -1,6 +1,9 @@
 # generator-koa-esm-api [![NPM version][npm-image]][npm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > Create Koa.js API server using the modern ESM Node.js module system + Mongoose
 
+##About
+This generator uses ESM modules along with webpack + pkg to build a binary. The .env file used during development will be hardcoded inside the resulting binary (however, consider encrypting sensitive data, because simple strings command can reveale all of your env variables). Also this generator uses custom Node.js loader functionality to provide custom aliasing like `@/lib/email`, which is resolved by webpack during build. 
+
 ## Installation
 
 First, install [Yeoman](http://yeoman.io) and generator-koa-esm-api using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
@@ -14,6 +17,16 @@ Then generate your new project:
 
 ```bash
 yo koa-esm-api
+```
+To create a new route run:
+
+```bash
+yo koa-esm-api:route name
+```
+To create a new model run:
+
+```bash
+yo koa-esm-api:model name
 ```
 
 ## Getting To Know Yeoman
