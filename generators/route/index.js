@@ -36,7 +36,8 @@ module.exports = class extends Generator {
     else {
       this.props.name = this.options.name;
     }
-    this.props.name = decapitalize(slug(this.props.name));
+    this.props.name = slug(this.props.name, { remove: undefined });
+    this.props.codename = slug(this.props.name);
     this.sourceRoot(path.join(__dirname, 'templates'));
   }
 
@@ -44,13 +45,13 @@ module.exports = class extends Generator {
     this.log(chalk.red('[*] writing...'));
     this.fs.copyTpl(this.templatePath('router.js'), this.destinationPath(`routes/${this.props.name}.js`), { name: this.props.name });
     const indexSource = this.fs.read(this.destinationPath('routes/index.js'));
-    const ast = addImport(addRouter(getAst(indexSource), this.props.name), this.props.name, `@/routes/${this.props.name}`);
+    const ast = addImport(addRouter(getAst(indexSource), this.props.codename), this.props.codename, `@/routes/${this.props.name}`);
     this.fs.write(this.destinationPath('routes/index.js'), stringify(ast, indexSource));
   }
 
   end() {
     this.log(
-      cowsay.think({ text: `${chalk.red('done @_@')}`  })
+      cowsay.think({ text: `${chalk.red('done @_@')}` })
     );
   }
 };
