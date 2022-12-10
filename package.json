@@ -1,6 +1,6 @@
 {
   "name": "generator-koa-esm-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Create Koa.js API server using the modern ESM Node.js module system + Mongoose",
   "homepage": "https://github.com/vaguue/generator-koa-esm-api",
   "author": {
