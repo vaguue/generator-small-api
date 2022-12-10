@@ -2,7 +2,7 @@
 > Create Koa.js API server using the modern ESM Node.js module system + Mongoose
 
 ## About
-This generator uses ESM modules along with webpack + pkg to build a binary. The .env file used during development will be hardcoded inside the resulting binary (however, consider encrypting sensitive data, because simple `strings` command can reveale all of your env variables). Also this generator uses custom Node.js loader functionality to provide custom aliasing like `@/lib/email`, which is resolved by webpack during build. 
+This generator uses ESM modules along with webpack + pkg to build a binary. The .env file used during development will be hardcoded in the resulting binary (however, consider encrypting sensitive data, because simple `strings` command can reveale all of your env variables). Also this generator uses the custom Node.js loader functionality to provide custom aliasing like `@/lib/email`, which is resolved by webpack during the build. 
 
 ## Installation
 

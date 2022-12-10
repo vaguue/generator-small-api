@@ -5,11 +5,8 @@ const chalk = require('chalk');
 const yosay = require('yosay');
 const cowsay = require('cowsay');
 
-const { getAst, stringify, addImport, modifyModelMap, addExportToTop, addExportDefaultToTop } = require('../../lib/ast.js');
-
-function capitalize(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
+const { capitalize, decapitalize, slug } = require('../../lib/str');
+const { getAst, stringify, addImport, modifyModelMap, addExportToTop, addExportDefaultToTop } = require('../../lib/ast');
 
 module.exports = class extends Generator {
   constructor(args, opts) {
@@ -40,8 +37,8 @@ module.exports = class extends Generator {
     else {
       this.props.name = this.options.name;
     }
-    this.props.name = capitalize(this.props.name);
-    this.props.codename = this.props.name.toLowerCase();
+    this.props.name = capitalize(slug(this.props.name));
+    this.props.codename = decapitalize(this.props.name);
     this.sourceRoot(path.join(__dirname, 'templates'));
   }
 

@@ -5,7 +5,8 @@ const chalk = require('chalk');
 const yosay = require('yosay');
 const cowsay = require('cowsay');
 
-const { getAst, stringify, addRouter, addImport } = require('../../lib/ast.js');
+const { capitalize, decapitalize, slug } = require('../../lib/str');
+const { getAst, stringify, addRouter, addImport } = require('../../lib/ast');
 
 module.exports = class extends Generator {
   constructor(args, opts) {
@@ -35,7 +36,7 @@ module.exports = class extends Generator {
     else {
       this.props.name = this.options.name;
     }
-    this.props.name = this.props.name.toLowerCase();
+    this.props.name = decapitalize(slug(this.props.name));
     this.sourceRoot(path.join(__dirname, 'templates'));
   }
 

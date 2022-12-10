@@ -1,8 +1,8 @@
 {
   "name": "generator-koa-esm-api",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Create Koa.js API server using the modern ESM Node.js module system + Mongoose",
-  "homepage": "https://github.com/vaguue/koa-esm-api",
+  "homepage": "https://github.com/vaguue/generator-koa-esm-api",
   "author": {
     "name": "Seva D.",
     "email": "sabrinarempel7@gmail.com",
@@ -22,6 +22,7 @@
   ],
   "devDependencies": {
     "coveralls": "^3.0.7",
+    "fs-extra": "^11.1.0",
     "husky": "^3.0.9",
     "jest": "^26.1.0",
     "yeoman-assert": "^3.1.1",
@@ -37,11 +38,18 @@
     "cowsay": "^1.5.0",
     "escodegen": "^2.0.0",
     "esprima": "^4.0.1",
+    "slugify": "^1.6.5",
     "yeoman-generator": "^3.1.1",
     "yosay": "^2.0.2"
   },
   "jest": {
     "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "./lib/ast.js",
+      "./generators/app/index.js",
+      "./generators/model/index.js",
+      "./generators/route/index.js"
+    ],
     "testPathIgnorePatterns": [
       "<rootDir>/generators/",
       "<rootDir>/node_modules/"
@@ -52,7 +60,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/vaguue/net-runner-engine"
+    "url": "git://github.com/vaguue/generator-koa-esm-api"
   },
   "license": "GPL-3.0"
 }
